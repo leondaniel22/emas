@@ -1,0 +1,38 @@
+{% extends "user_site/user_layout.html" %}
+{% load static %}
+{% block content %}
+<div>
+    <h4>Wählen eines <strong>Erscheinungsbilds:</strong></h4>
+</div>
+<div class="row">
+    {% for err_app in error_appearances %}
+    <div class="p-2 mt-3 mb-3 rounded-3 bg-white border-dark">
+        <div class="col-md-2">
+            <img class="shadow-lg rounded-3 img-fluid" src="{% static '/images/layout/coming-soon.png' %}" alt="">
+        </div>
+        <br>
+        <div class="col-md-10 " style="text-align: justify;">
+            <strong>Titel: </strong>
+            <span>{{ err_app.name }}</span>
+            <br>
+            <strong>Fehlerposition: </strong>
+            <span>{{ err_app.get_location_display }}</span>
+            <br>
+            <br>
+            <strong>Problem Beschreibung: </strong>
+            <span>{{ err_app.description }}</span>
+        </div>
+        <br>
+        <div class="col-md-2 col-md-offset-10">
+            <form action="{% url 'solution' %}" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <input type="hidden" name="err_app" value="{{ err_app.pk }}">
+                <button class="rounded-3 btn btn-outline-info "type="submit">Weiter</button>
+            </form>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br>
+{% endblock %}

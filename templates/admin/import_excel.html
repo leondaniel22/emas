@@ -1,0 +1,28 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+    <div id="excelFile" class="col-md-12 border-bottom border-top border-info font-italic">
+        <h5 class="font-weight-bold"><i style="color: forestgreen;" class="fa fa-info-circle"></i> Allgemeine Informationen:</h5>
+        <ul>
+            <li>Hier können neue Daten über eine Excel Tabelle hinzugefügt werden</li>
+            <li>Es können beliebig viele Daten aufeinmal hinzugefügt werden</li>
+        </ul>
+        <h5 class="font-weight-bold"><i style="color: red;" class="fa fa-exclamation-triangle"></i> Bitte folgende Regeln beachten:</h5>
+        <ul>
+            <li>Die Datei muss das Format <i class="font-weight-bold">.xlsx</i> haben</li>
+            <li>Bitte halten Sie sich an das vorgebene Format</li>
+            <li>Ein Template zum Format können Sie <a style="color: darkgreen; font-weight: bold;"href="#">hier <i class="fa fa-download"></i></a> downloaden</li>
+            <li>Bilder müssen seperat über "Erscheinungsbild" oder "Lösung" hinzugefügt werden</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <div class="form-row">
+
+
+            <label for="id_import_file">Zu importierende Datei:</label>
+
+            <input type="file" name="import_file" required="" id="id_import_file">
+
+
+          </div>
+{% endblock %}

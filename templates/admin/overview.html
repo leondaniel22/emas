@@ -1,0 +1,25 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+
+<table style="width:100%">
+    <thead class="thead-light">
+      <tr>
+        <th>Fehlerkategorie</th>
+        <th>Erscheinungsbild</th>
+        <th>Lösung</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for element in query %}
+        <tr>
+            <td>{{ element.error_appearance.error_category.name }}</td>
+            <td>{{ element.error_appearance.name }}</td>
+            <td>{{ element.name }}</td>
+        </tr>
+    {%  endfor %}
+    </tbody>
+</table>
+
+
+
+{% endblock %}
