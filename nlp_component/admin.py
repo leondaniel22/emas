@@ -9,4 +9,4 @@ class RequestCommentAdmin(admin.ModelAdmin):
 
 @admin.register(EditComment)
 class EditCommentAdmin(admin.ModelAdmin):
-    list_display = ("content", "solution")
+    list_display = ("content", "reason", "media_validation", "solution")

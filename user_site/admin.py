@@ -16,6 +16,9 @@ from import_export import resources
 class ErrorCategoryAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display = ("name", "description")
 
+@admin.register(Location)
+class LocationAdmin(admin.ModelAdmin):
+    list_display = ("name", "description")
 
 @admin.register(ErrorAppearance)
 class ErrorAppearanceAdmin(ImportExportModelAdmin, admin.ModelAdmin):

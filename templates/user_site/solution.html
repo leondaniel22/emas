@@ -14,7 +14,7 @@
         <div id="sol_{{ sol.pk }}" class="col-sm-9 collapse" style="padding: 1em;">
             <div class="p-2 mt-3 mb-3 rounded-3 bg-white border-dark">
                 <div class="col-md-2">
-                    <img class="shadow-lg rounded-3 img-fluid" src="{{ sol.media }}" alt="Bild kommt bald ...">
+                    <img class="shadow-lg rounded-3 img-fluid" src="{{ sol.media.url }}" alt="Bild kommt bald ...">
                 </div>
                 <br>
                 <div class="col-md-10 " style="text-align: justify;">
@@ -39,15 +39,17 @@
                     <button class="rounded-3 btn btn-outline-primary " data-bs-toggle="collapse" href="#edit_comment" type="submit" style="width:100%">
                         Lösung kommentieren <i class="fas fa-edit"></i>
                     </button>
-
-                    <div id="edit_comment" class="col-sm-9 collapse" style="padding: 1em;">
+                    </div>
+                    <div id="edit_comment" class="collapse" style="padding: 1em;">
+                        <hr>
                         <div class="p-2 mt-3 mb-3 rounded-3 bg-white border-dark">
                             <br>
-                            <div class="col-md-2 col-md-offset-10">
+                            <div class="col-md-18 col-md-offset-10">
                                 <form action="{% url 'edit_comment' %}" method="POST">
                                     {% csrf_token %}
-                                    {{ comment_form }}
-                                    <input type="hidden" name="err_app" value="{{ sol.error_appearance_id}}">
+                                    {{ edit_comment_form }}
+                                    <input type="hidden" name="sol" value="{{ sol.pk }}">
+                                    <br>
                                     <button class="rounded-3 btn btn-outline-success "type="submit" >
                                         <span class="glyphicon glyphicon-minus"></span>Abschicken
                                     </button>
@@ -56,25 +58,23 @@
                         </div>
                     </div>
 
-                </div>
+
             </div>
         </div>
         <br>
         <a class="rounded-3 border-1 border-info card-header card bg-white text-dark" data-bs-toggle="collapse" href="#no_sol">
         Keine dieser Lösungen
         </a>
-        <div id="no_sol" class="col-sm-9 collapse" style="padding: 1em;">
+        <div id="no_sol" class="collapse" style="padding: 1em;">
             <div class="p-2 mt-3 mb-3 rounded-3 bg-white border-dark">
-                <div class="col-md-10 " style="text-align: justify;">
-                    <strong>Neuen Lösungsvorschlag hinzufügen:</strong>
-                </div>
                 <br>
-                <div class="col-md-2 col-md-offset-10">
+                <div class="col-md-18 col-md-offset-10">
                     <form action="{% url 'request_comment' %}" method="POST">
                         {% csrf_token %}
-                        {{ comment_form }}
+                        {{ request_comment_form }}
                         <input type="hidden" name="err_app" value="{{ sol.error_appearance_id}}">
-                        <button class="rounded-3 btn btn-outline-success "type="submit" style="width:100%">
+                        <br>
+                        <button class="rounded-3 btn btn-outline-success "type="submit" >
                             <span class="glyphicon glyphicon-minus"></span>Abschicken
                         </button>
                     </form>

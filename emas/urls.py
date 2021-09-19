@@ -19,6 +19,8 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from user_site import views
 from django.conf.urls.i18n import i18n_patterns
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     #path('user_site/', include('user_site.urls')),
@@ -29,6 +31,7 @@ urlpatterns = [
     path('success/', views.success, name='success'),
     path('request_comment/', views.request_comment, name='request_comment'),
     path('edit_comment/', views.edit_comment, name='edit_comment'),
-]
+    path('pdf_locations/<str:location>', views.pdf_locations, name="pdf_locations"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

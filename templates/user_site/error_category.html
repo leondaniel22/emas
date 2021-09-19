@@ -15,7 +15,7 @@
             {%  if err_app.error_category_id == err_cat.pk  %}
             <div class="p-2 mt-3 mb-3 rounded-3 bg-white border-dark">
                 <div class="col-md-2">
-                    <img class="shadow-lg rounded-3 img-fluid" src="{% static '/../../static/images/layout/coming-soon.png' %}" alt="">
+                    <img class="shadow-lg rounded-3 img-fluid" src="{{ err_app.media.url }}" alt="">
                 </div>
                 <br>
                 <div class="col-md-10 " style="text-align: justify;">

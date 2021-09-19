@@ -1,5 +1,6 @@
 from django.db import models
 from user_site.models import *
+from user_site.forms import *
 # Create your models here.
 
 
@@ -24,7 +25,8 @@ class RequestComment(Comment, models.Model):
 class EditComment(Comment, models.Model):
     solution = models.ForeignKey(verbose_name="Lösung", to=Solution, on_delete=models.CASCADE,
                                          default=None)
-
+    reason = models.CharField(verbose_name="Grund", max_length=2, choices=EditCommentForm.REASONS, default=None)
+    media_validation = models.CharField(verbose_name="Bild/Video Bewertung", max_length=2, choices=EditCommentForm.MEDIA_VALIDATION, default=None)
     class Meta:
         verbose_name = "Überarbeiteter Lösungsvorschlag"
         verbose_name_plural = "Überarbeitete Lösungsvorschläge"
