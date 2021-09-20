@@ -24,18 +24,19 @@
     <div class="">
         <img id="routemodel" src="{% static 'user_site/images/layout/routemodel.png' %}" alt="routemodel" width="100%" usemap="#routemodel">
         <map name="routemodel">
-            <area id="konfektion_document" target="_self" alt="konfektion_document" title="konfektion_document" href="{% url 'pdf_locations' location='Konfektion' %}" coords="1679,53,1918,397" shape="rect">
-            <area id="konfektion_image"  target="_self" alt="konfektion_image" title="konfektion_image" href="{% url 'error_appearance' location='Konfektion' %}" coords="-20,0,1944,2040" shape="rect">
-            <area id="druckwerke_document" target="_self" alt="druckwerke_document" title="druckwerke_document" href="{% url 'pdf_locations' location='Druckwerke & Oberfläche' %}" coords="8501,26,8740,397" shape="rect">
-            <area id="druckwerke_image" target="_self" alt="druckwerke_image" title="druckwerke_image" href="{% url 'error_appearance' location='Druckwerke & Oberfläche' %}" coords="1944,0,8766,2040" shape="rect">
-            <area id="vorbehandlung_document" target="_self" alt="vorbehandlung_document" title="vorbehandlung_document" href="{% url 'pdf_locations' location='Vorbehandlung' %}" coords="9881,26,10147,397" shape="rect">
-            <area id="vorbehandlung_image" target="_self" alt="vorbehandlung_image" title="vorbehandlung_image" href="{% url 'error_appearance' location='Vorbehandlung' %}" coords="8766,0,10173,2040" shape="rect">
-            <area id="laser_document" target="_self" alt="laser_document" title="laser_document" href="{% url 'pdf_locations' location='Laser-Edge-Extruder' %}" coords="11952,53,12217,397" shape="rect">
-            <area id="laser_image" target="_self" alt="laser_image" title="laser_image" href="{% url 'error_appearance' location='Laser-Edge-Extruder' %}" coords="10173,0,12244,2040" shape="rect">
-            <area id="kuehlstrecke_document" target="_self" alt="kuehlstrecke_document" title="kuehlstrecke_document" href="{% url 'pdf_locations' location='Kühlstrecke mit Abzug' %}" coords="16358,53,16650,397" shape="rect">
-            <area id="kuehlstrecke_image" target="_self" alt="kuehlstrecke_image" title="kuehlstrecke_image" href="{% url 'error_appearance' location='Kühlstrecke mit Abzug' %}" coords="12244,0,16677,2040" shape="rect">
-            <area id="extruder_document" target="_self" alt="extruder_document" title="extruder_document" href="{% url 'pdf_locations' location='Extruder (Dosierung)' %}" coords="18641,50,18884,376" shape="rect">
-            <area id="extruder_image" target="_self" alt="extruder_image" title="extruder_image" href="{% url 'error_appearance' location='Extruder (Dosierung)' %}" coords="16677,0,18892,2033" shape="rect">
+
+            <area class="map_area" id="konfektion_document" target="_self" alt="konfektion_document" title="konfektion_document" href="{% url 'pdf_locations' location='Konfektion' %}" coords="1679,53,1918,397" shape="rect">
+            <area class="map_area" id="konfektion_image"  target="_self" alt="konfektion_image" title="konfektion_image" href="{% url 'error_appearance' location='Konfektion' %}" coords="-20,0,1944,2040" shape="rect">
+            <area class="map_area" id="druckwerke_document" target="_self" alt="druckwerke_document" title="druckwerke_document" href="{% url 'pdf_locations' location='Druckwerke & Oberfläche' %}" coords="8501,26,8740,397" shape="rect">
+            <area class="map_area" id="druckwerke_image" target="_self" alt="druckwerke_image" title="druckwerke_image" href="{% url 'error_appearance' location='Druckwerke & Oberfläche' %}" coords="1944,0,8766,2040" shape="rect">
+            <area class="map_area" id="vorbehandlung_document" target="_self" alt="vorbehandlung_document" title="vorbehandlung_document" href="{% url 'pdf_locations' location='Vorbehandlung' %}" coords="9881,26,10147,397" shape="rect">
+            <area class="map_area" id="vorbehandlung_image" target="_self" alt="vorbehandlung_image" title="vorbehandlung_image" href="{% url 'error_appearance' location='Vorbehandlung' %}" coords="8766,0,10173,2040" shape="rect">
+            <area class="map_area" id="laser_document" target="_self" alt="laser_document" title="laser_document" href="{% url 'pdf_locations' location='Laser-Edge-Extruder' %}" coords="11952,53,12217,397" shape="rect">
+            <area class="map_area" id="laser_image" target="_self" alt="laser_image" title="laser_image" href="{% url 'error_appearance' location='Laser-Edge-Extruder' %}" coords="10173,0,12244,2040" shape="rect">
+            <area class="map_area" id="kuehlstrecke_document" target="_self" alt="kuehlstrecke_document" title="kuehlstrecke_document" href="{% url 'pdf_locations' location='Kühlstrecke mit Abzug' %}" coords="16358,53,16650,397" shape="rect">
+            <area class="map_area" id="kuehlstrecke_image" target="_self" alt="kuehlstrecke_image" title="kuehlstrecke_image" href="{% url 'error_appearance' location='Kühlstrecke mit Abzug' %}" coords="12244,0,16677,2040" shape="rect">
+            <area class="map_area" id="extruder_document" target="_self" alt="extruder_document" title="extruder_document" href="{% url 'pdf_locations' location='Extruder (Dosierung)' %}" coords="18641,50,18884,376" shape="rect">
+            <area class="map_area" id="extruder_image" target="_self" alt="extruder_image" title="extruder_image" href="{% url 'error_appearance' location='Extruder (Dosierung)' %}" coords="16677,0,18892,2033" shape="rect">
         </map>
     </div>
     <br>

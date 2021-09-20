@@ -16,6 +16,7 @@ import posixpath
 import sys
 import dj_database_url
 import whitenoise
+import django_heroku
 
 sys.modules['fontawesome_free'] = __import__('fontawesome-free')
 
@@ -31,6 +32,8 @@ SECRET_KEY = 'django-insecure-s1tc&n=*t7baxvvqsu_umelvcr)3(=b9!y42q62k&p)i5!syjw
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# only for production
+#DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = []
 
@@ -153,3 +156,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
+#django_heroku.settings(locals())
